@@ -285,7 +285,7 @@ class URL
                 // 节点非只启用单端口 && 只获取普通端口
                 if ($node->mu_only != 1 && ($is_mu == 0 || ($is_mu != 0 && $_ENV['mergeSub'] === true))) {
                     foreach ($is_ss as $ss) {
-                        $item = $node->getItem($user, 0, 0, $ss, $emoji);
+                        $item = $node->getItem($user, 0, $ss, $emoji);
                         if ($item != null) {
                             $return_array[] = $item;
                         }
@@ -297,7 +297,7 @@ class URL
                 if ($node->mu_only != -1 && $is_mu != 0) {
                     foreach ($is_ss as $ss) {
                         foreach ($mu_nodes as $mu_node) {
-                            $item = $node->getItem($user, $mu_node->server, 0, $ss, $emoji);
+                            $item = $node->getItem($user, $mu_node->server, $ss, $emoji);
                             if ($item != null) {
                                 $return_array[] = $item;
                             }
